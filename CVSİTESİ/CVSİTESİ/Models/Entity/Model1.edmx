@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbcvsitesiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbcvsitesi.dbo.TblAdmin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullanıcıAdı" Type="varchar" MaxLength="20" />
+          <Property Name="Şifre" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbcvsitesi.dbo.TblDeneyimlerim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TblDeneyimlerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Başlık" Type="varchar" MaxLength="100" />
+          <Property Name="AltBaşlık" Type="varchar" MaxLength="100" />
+          <Property Name="Açıklama" Type="varchar(max)" />
+          <Property Name="Tarih" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbcvsitesi.dbo.TblEğitimlerim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TblEğitimlerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Başlık" Type="varchar" MaxLength="100" />
+          <Property Name="AltBaşlık1" Type="varchar" MaxLength="100" />
+          <Property Name="AltBaşlık2" Type="varchar" MaxLength="100" />
+          <Property Name="GNO" Type="varchar" MaxLength="10" />
+          <Property Name="Tarih" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbcvsitesi.dbo.TblHakkımda' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TblHakkımda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="varchar" MaxLength="30" />
+          <Property Name="Soyad" Type="varchar" MaxLength="30" />
+          <Property Name="Adres" Type="varchar" MaxLength="100" />
+          <Property Name="Telefon" Type="varchar" MaxLength="20" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="Açıklama" Type="varchar(max)" />
+          <Property Name="Resim" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbcvsitesi.dbo.TblHobilerim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TblHobilerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Açıklama1" Type="varchar" MaxLength="500" />
+          <Property Name="Açıklama2" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbcvsitesi.dbo.Tblİletişim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tblİletişim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Adsoyad" Type="varchar" MaxLength="100" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="Konu" Type="varchar" MaxLength="1000" />
+          <Property Name="Tarih" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbcvsitesi.dbo.TblSertifikalarım' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TblSertifikalarım">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Açıklama" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbcvsitesi.dbo.TblYeteneklerim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TblYeteneklerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Yetenek" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="dbcvsitesiModelStoreContainer">
+          <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TblAdmin].[ID] AS [ID], 
+    [TblAdmin].[KullanıcıAdı] AS [KullanıcıAdı], 
+    [TblAdmin].[Şifre] AS [Şifre]
+    FROM [dbo].[TblAdmin] AS [TblAdmin]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TblDeneyimlerim" EntityType="Self.TblDeneyimlerim" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TblDeneyimlerim].[ID] AS [ID], 
+    [TblDeneyimlerim].[Başlık] AS [Başlık], 
+    [TblDeneyimlerim].[AltBaşlık] AS [AltBaşlık], 
+    [TblDeneyimlerim].[Açıklama] AS [Açıklama], 
+    [TblDeneyimlerim].[Tarih] AS [Tarih]
+    FROM [dbo].[TblDeneyimlerim] AS [TblDeneyimlerim]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TblEğitimlerim" EntityType="Self.TblEğitimlerim" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TblEğitimlerim].[ID] AS [ID], 
+    [TblEğitimlerim].[Başlık] AS [Başlık], 
+    [TblEğitimlerim].[AltBaşlık1] AS [AltBaşlık1], 
+    [TblEğitimlerim].[AltBaşlık2] AS [AltBaşlık2], 
+    [TblEğitimlerim].[GNO] AS [GNO], 
+    [TblEğitimlerim].[Tarih] AS [Tarih]
+    FROM [dbo].[TblEğitimlerim] AS [TblEğitimlerim]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TblHakkımda" EntityType="Self.TblHakkımda" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TblHakkımda].[ID] AS [ID], 
+    [TblHakkımda].[Ad] AS [Ad], 
+    [TblHakkımda].[Soyad] AS [Soyad], 
+    [TblHakkımda].[Adres] AS [Adres], 
+    [TblHakkımda].[Telefon] AS [Telefon], 
+    [TblHakkımda].[Mail] AS [Mail], 
+    [TblHakkımda].[Açıklama] AS [Açıklama], 
+    [TblHakkımda].[Resim] AS [Resim]
+    FROM [dbo].[TblHakkımda] AS [TblHakkımda]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TblHobilerim" EntityType="Self.TblHobilerim" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TblHobilerim].[ID] AS [ID], 
+    [TblHobilerim].[Açıklama1] AS [Açıklama1], 
+    [TblHobilerim].[Açıklama2] AS [Açıklama2]
+    FROM [dbo].[TblHobilerim] AS [TblHobilerim]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tblİletişim" EntityType="Self.Tblİletişim" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Tblİletişim].[ID] AS [ID], 
+    [Tblİletişim].[Adsoyad] AS [Adsoyad], 
+    [Tblİletişim].[Mail] AS [Mail], 
+    [Tblİletişim].[Konu] AS [Konu], 
+    [Tblİletişim].[Tarih] AS [Tarih]
+    FROM [dbo].[Tblİletişim] AS [Tblİletişim]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TblSertifikalarım" EntityType="Self.TblSertifikalarım" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TblSertifikalarım].[ID] AS [ID], 
+    [TblSertifikalarım].[Açıklama] AS [Açıklama]
+    FROM [dbo].[TblSertifikalarım] AS [TblSertifikalarım]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TblYeteneklerim" EntityType="Self.TblYeteneklerim" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TblYeteneklerim].[ID] AS [ID], 
+    [TblYeteneklerim].[Yetenek] AS [Yetenek]
+    FROM [dbo].[TblYeteneklerim] AS [TblYeteneklerim]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbcvsitesiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullanıcıAdı" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Şifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblDeneyimlerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Başlık" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AltBaşlık" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Açıklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblEğitimlerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Başlık" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AltBaşlık1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AltBaşlık2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblHakkımda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Soyad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Adres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Açıklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Resim" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblHobilerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Açıklama1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Açıklama2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tblİletişim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Adsoyad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Konu" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TblSertifikalarım">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Açıklama" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TblYeteneklerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Yetenek" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="dbcvsitesiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" />
+          <EntitySet Name="TblDeneyimlerim" EntityType="Self.TblDeneyimlerim" />
+          <EntitySet Name="TblEğitimlerim" EntityType="Self.TblEğitimlerim" />
+          <EntitySet Name="TblHakkımda" EntityType="Self.TblHakkımda" />
+          <EntitySet Name="TblHobilerim" EntityType="Self.TblHobilerim" />
+          <EntitySet Name="Tblİletişim" EntityType="Self.Tblİletişim" />
+          <EntitySet Name="TblSertifikalarım" EntityType="Self.TblSertifikalarım" />
+          <EntitySet Name="TblYeteneklerim" EntityType="Self.TblYeteneklerim" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbcvsitesiModelStoreContainer" CdmEntityContainer="dbcvsitesiEntities">
+          <EntitySetMapping Name="TblAdmin">
+            <EntityTypeMapping TypeName="dbcvsitesiModel.TblAdmin">
+              <MappingFragment StoreEntitySet="TblAdmin">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KullanıcıAdı" ColumnName="KullanıcıAdı" />
+                <ScalarProperty Name="Şifre" ColumnName="Şifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblDeneyimlerim">
+            <EntityTypeMapping TypeName="dbcvsitesiModel.TblDeneyimlerim">
+              <MappingFragment StoreEntitySet="TblDeneyimlerim">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Başlık" ColumnName="Başlık" />
+                <ScalarProperty Name="AltBaşlık" ColumnName="AltBaşlık" />
+                <ScalarProperty Name="Açıklama" ColumnName="Açıklama" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblEğitimlerim">
+            <EntityTypeMapping TypeName="dbcvsitesiModel.TblEğitimlerim">
+              <MappingFragment StoreEntitySet="TblEğitimlerim">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Başlık" ColumnName="Başlık" />
+                <ScalarProperty Name="AltBaşlık1" ColumnName="AltBaşlık1" />
+                <ScalarProperty Name="AltBaşlık2" ColumnName="AltBaşlık2" />
+                <ScalarProperty Name="GNO" ColumnName="GNO" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblHakkımda">
+            <EntityTypeMapping TypeName="dbcvsitesiModel.TblHakkımda">
+              <MappingFragment StoreEntitySet="TblHakkımda">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Açıklama" ColumnName="Açıklama" />
+                <ScalarProperty Name="Resim" ColumnName="Resim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblHobilerim">
+            <EntityTypeMapping TypeName="dbcvsitesiModel.TblHobilerim">
+              <MappingFragment StoreEntitySet="TblHobilerim">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Açıklama1" ColumnName="Açıklama1" />
+                <ScalarProperty Name="Açıklama2" ColumnName="Açıklama2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tblİletişim">
+            <EntityTypeMapping TypeName="dbcvsitesiModel.Tblİletişim">
+              <MappingFragment StoreEntitySet="Tblİletişim">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Adsoyad" ColumnName="Adsoyad" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Konu" ColumnName="Konu" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSertifikalarım">
+            <EntityTypeMapping TypeName="dbcvsitesiModel.TblSertifikalarım">
+              <MappingFragment StoreEntitySet="TblSertifikalarım">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Açıklama" ColumnName="Açıklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblYeteneklerim">
+            <EntityTypeMapping TypeName="dbcvsitesiModel.TblYeteneklerim">
+              <MappingFragment StoreEntitySet="TblYeteneklerim">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Yetenek" ColumnName="Yetenek" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
