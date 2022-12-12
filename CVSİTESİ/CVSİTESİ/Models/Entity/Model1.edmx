@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="dbcvsitesiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="dbcvsitesiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'dbcvsitesi.dbo.TblAdmin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="TblAdmin">
@@ -15,8 +15,6 @@ warning 6002: The table/view 'dbcvsitesi.dbo.TblAdmin' does not have a primary k
           <Property Name="KullanıcıAdı" Type="varchar" MaxLength="20" />
           <Property Name="Şifre" Type="varchar" MaxLength="20" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'dbcvsitesi.dbo.TblDeneyimlerim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="TblDeneyimlerim">
           <Key>
             <PropertyRef Name="ID" />
@@ -65,8 +63,6 @@ warning 6002: The table/view 'dbcvsitesi.dbo.TblHobilerim' does not have a prima
           <Property Name="Açıklama1" Type="varchar" MaxLength="500" />
           <Property Name="Açıklama2" Type="varchar" MaxLength="500" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'dbcvsitesi.dbo.Tblİletişim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Tblİletişim">
           <Key>
             <PropertyRef Name="ID" />
@@ -96,21 +92,14 @@ warning 6002: The table/view 'dbcvsitesi.dbo.TblYeteneklerim' does not have a pr
           <Property Name="Yetenek" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityContainer Name="dbcvsitesiModelStoreContainer">
+          <EntitySet Name="TblDeneyimlerim" EntityType="Self.TblDeneyimlerim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tblİletişim" EntityType="Self.Tblİletişim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [TblAdmin].[ID] AS [ID], 
     [TblAdmin].[KullanıcıAdı] AS [KullanıcıAdı], 
     [TblAdmin].[Şifre] AS [Şifre]
     FROM [dbo].[TblAdmin] AS [TblAdmin]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="TblDeneyimlerim" EntityType="Self.TblDeneyimlerim" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [TblDeneyimlerim].[ID] AS [ID], 
-    [TblDeneyimlerim].[Başlık] AS [Başlık], 
-    [TblDeneyimlerim].[AltBaşlık] AS [AltBaşlık], 
-    [TblDeneyimlerim].[Açıklama] AS [Açıklama], 
-    [TblDeneyimlerim].[Tarih] AS [Tarih]
-    FROM [dbo].[TblDeneyimlerim] AS [TblDeneyimlerim]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="TblEğitimlerim" EntityType="Self.TblEğitimlerim" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -141,15 +130,6 @@ warning 6002: The table/view 'dbcvsitesi.dbo.TblYeteneklerim' does not have a pr
     [TblHobilerim].[Açıklama2] AS [Açıklama2]
     FROM [dbo].[TblHobilerim] AS [TblHobilerim]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="Tblİletişim" EntityType="Self.Tblİletişim" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Tblİletişim].[ID] AS [ID], 
-    [Tblİletişim].[Adsoyad] AS [Adsoyad], 
-    [Tblİletişim].[Mail] AS [Mail], 
-    [Tblİletişim].[Konu] AS [Konu], 
-    [Tblİletişim].[Tarih] AS [Tarih]
-    FROM [dbo].[Tblİletişim] AS [Tblİletişim]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="TblSertifikalarım" EntityType="Self.TblSertifikalarım" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [TblSertifikalarım].[ID] AS [ID], 
@@ -163,8 +143,7 @@ warning 6002: The table/view 'dbcvsitesi.dbo.TblYeteneklerim' does not have a pr
     FROM [dbo].[TblYeteneklerim] AS [TblYeteneklerim]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbcvsitesiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CVSİTESİ.Models.Entity;
+
 namespace CVSİTESİ.Controllers
 {
     public class DefaultController : Controller
