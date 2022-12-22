@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbcvsitesiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbcvsitesi.dbo.TblAdmin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TblAdmin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullanıcıAdı" Type="varchar" MaxLength="20" />
+    <Property Name="Şifre" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TblDeneyimlerim">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Başlık" Type="varchar" MaxLength="100" />
+    <Property Name="AltBaşlık" Type="varchar" MaxLength="100" />
+    <Property Name="Açıklama" Type="varchar(max)" />
+    <Property Name="Tarih" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TblEğitimlerim">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Başlık" Type="varchar" MaxLength="100" />
+    <Property Name="AltBaşlık1" Type="varchar" MaxLength="100" />
+    <Property Name="AltBaşlık2" Type="varchar" MaxLength="100" />
+    <Property Name="GNO" Type="varchar" MaxLength="10" />
+    <Property Name="Tarih" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbcvsitesi.dbo.TblHakkımda' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TblHakkımda">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ad" Type="varchar" MaxLength="30" />
+    <Property Name="Soyad" Type="varchar" MaxLength="30" />
+    <Property Name="Adres" Type="varchar" MaxLength="100" />
+    <Property Name="Telefon" Type="varchar" MaxLength="20" />
+    <Property Name="Mail" Type="varchar" MaxLength="50" />
+    <Property Name="Açıklama" Type="varchar(max)" />
+    <Property Name="Resim" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbcvsitesi.dbo.TblHobilerim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TblHobilerim">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Açıklama1" Type="varchar" MaxLength="500" />
+    <Property Name="Açıklama2" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Tblİletişim">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Adsoyad" Type="varchar" MaxLength="100" />
+    <Property Name="Mail" Type="varchar" MaxLength="50" />
+    <Property Name="Konu" Type="varchar" MaxLength="1000" />
+    <Property Name="Tarih" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbcvsitesi.dbo.TblSertifikalarım' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TblSertifikalarım">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Açıklama" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="TblYeteneklerim">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Yetenek" Type="varchar" MaxLength="100" />
+    <Property Name="Oran" Type="tinyint" />
+  </EntityType>
+  <EntityContainer Name="dbcvsitesiModelStoreContainer">
+    <EntitySet Name="TblDeneyimlerim" EntityType="Self.TblDeneyimlerim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblEğitimlerim" EntityType="Self.TblEğitimlerim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tblİletişim" EntityType="Self.Tblİletişim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblYeteneklerim" EntityType="Self.TblYeteneklerim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TblAdmin].[ID] AS [ID], 
+    [TblAdmin].[KullanıcıAdı] AS [KullanıcıAdı], 
+    [TblAdmin].[Şifre] AS [Şifre]
+    FROM [dbo].[TblAdmin] AS [TblAdmin]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TblHakkımda" EntityType="Self.TblHakkımda" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TblHakkımda].[ID] AS [ID], 
+    [TblHakkımda].[Ad] AS [Ad], 
+    [TblHakkımda].[Soyad] AS [Soyad], 
+    [TblHakkımda].[Adres] AS [Adres], 
+    [TblHakkımda].[Telefon] AS [Telefon], 
+    [TblHakkımda].[Mail] AS [Mail], 
+    [TblHakkımda].[Açıklama] AS [Açıklama], 
+    [TblHakkımda].[Resim] AS [Resim]
+    FROM [dbo].[TblHakkımda] AS [TblHakkımda]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TblHobilerim" EntityType="Self.TblHobilerim" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TblHobilerim].[ID] AS [ID], 
+    [TblHobilerim].[Açıklama1] AS [Açıklama1], 
+    [TblHobilerim].[Açıklama2] AS [Açıklama2]
+    FROM [dbo].[TblHobilerim] AS [TblHobilerim]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TblSertifikalarım" EntityType="Self.TblSertifikalarım" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TblSertifikalarım].[ID] AS [ID], 
+    [TblSertifikalarım].[Açıklama] AS [Açıklama]
+    FROM [dbo].[TblSertifikalarım] AS [TblSertifikalarım]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
